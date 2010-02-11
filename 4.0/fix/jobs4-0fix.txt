@@ -1,0 +1,12 @@
+@@
+@@ This patch fixes the +typo bug in Jobs 4.0 and bumps up the patch level to 1.
+@@ If you have 4.0 installed on your system, this patch is necessary.
+@@
+@set me=quiet
+@fo me={@tel [search(object=Job Global Object <JGO>)]}
+&CMD_TYPO Job Global Object <JGO>=$+typo *:@switch [not(haspower(%#,guest))]=0*,{@pemit %#=Permission denied.},{@pemit [setq(0,add(get(#1430/JOBS_NUM),1))]%#=You have notified production staff of the typo, with the details '[strtrunc(%0,get(#1430/BUFFER))]';@trigger #1430/TRIG_CREATE=%#,BUILD,2,Typo Reported,[strtrunc(%0,get(#1430/BUFFER))]}
+&VERSION Job Database <JD>=v4.1
+@pemit %#=[ansi(hc,ANOMALY JOBS:)] Cleaning up attributes. You may see 'Created: Permission denied.' errors, these are normal.
+@@
+@fo me=@edit here/*=#1430,[num(Job Database <JD>)]
+@wait 2={@pemit %#=[ansi(hc,ANOMALY JOBS:)] Patch complete! Thanks for using Anomaly Jobs!;home;@set me=!quiet}
