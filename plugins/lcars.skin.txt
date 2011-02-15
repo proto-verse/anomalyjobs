@@ -1,5 +1,5 @@
 #
-# Anomaly Jobs LCARS skin v1.1 by Starfleet
+# Anomaly Jobs LCARS skin v1.0 by Starfleet
 # 
 # Contributor: Minion@Crossroads
 #
